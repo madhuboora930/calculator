@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://your-site.netlify.app/sitemap.xml
+Sitemap: https://calc.madhuboora.online/sitemap.xml
