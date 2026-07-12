@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="text-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#e879f9" />
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#e879f9" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#e879f9" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#09090b" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+  <text x="100" y="270" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700" fill="url(#text-grad)">Neon Calc</text>
+  <text x="100" y="325" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500" fill="#94a3b8">A futuristic holographic-LCD calculator</text>
+  <g transform="translate(100,390)">
+    <rect width="340" height="180" rx="16" fill="#17171c" stroke="#2c2a38" />
+    <rect x="20" y="20" width="300" height="50" rx="8" fill="#1f1f28" />
+    <text x="300" y="53" font-family="JetBrains Mono, monospace" font-size="24" fill="url(#text-grad)" text-anchor="end">42</text>
+    <rect x="20" y="90" width="65" height="65" rx="10" fill="#1f1f28" />
+    <rect x="97" y="90" width="65" height="65" rx="10" fill="#1f1f28" />
+    <rect x="174" y="90" width="65" height="65" rx="10" fill="#1f1f28" />
+    <rect x="251" y="90" width="69" height="65" rx="10" fill="#3a2f10" stroke="#fbbf24" stroke-width="1" opacity="0.6" />
+  </g>
+</svg>

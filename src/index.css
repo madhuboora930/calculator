@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-ink: #09090b;
+  --color-surface: #17171c;
+  --color-surface-2: #1f1f28;
+  --color-glow: #e879f9;
+  --color-glow-2: #22d3ee;
+  --color-op: #fbbf24;
+  --color-danger: #f87171;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--color-ink);
+  color: #e2e0e6;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-glow);
+  color: var(--color-ink);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-glow-2), var(--color-glow));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Deliberately far from --color-ink (rgb 9,9,11) so panels never blend
+   into the background — a real bug we hit and fixed in an earlier project. */
+.glass {
+  background: rgba(44, 42, 56, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(203, 213, 225, 0.16);
+  box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.7);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass {
+    background: rgba(44, 42, 56, 0.95);
+  }
+}
+
+.glow-display {
+  text-shadow:
+    0 0 20px rgba(232, 121, 249, 0.35),
+    0 0 40px rgba(34, 211, 238, 0.15);
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(24px, -30px) scale(1.08);
+  }
+  66% {
+    transform: translate(-20px, 18px) scale(0.95);
+  }
+}
+.animate-blob {
+  animation: blob 22s infinite ease-in-out;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-glow-2);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
